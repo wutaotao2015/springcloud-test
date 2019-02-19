@@ -1,7 +1,7 @@
 package com.itmuch.cloud.study.user.feign;
 
 import com.itmuch.cloud.config.FeignLogConfiguration;
-import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
