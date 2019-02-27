@@ -1,11 +1,10 @@
 package com.itmuch.cloud.study.user.feign;
 
 import com.itmuch.cloud.config.FeignLogConfiguration;
-import org.springframework.cloud.openfeign.FeignClient;
+import com.itmuch.cloud.study.user.entity.User;
+import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
-
-import com.itmuch.cloud.study.user.entity.User;
 
 import java.util.Map;
 
@@ -13,7 +12,7 @@ import java.util.Map;
  * Feign的fallback测试
  * 使用@FeignClient的fallback属性指定回退类
  *
- * @author 周立
+ @author 周立
  */
 @FeignClient(name = "microservice-provider-user",
         fallback = FeignClientFallback.class,
