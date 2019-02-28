@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.itmuch.cloud.study.dao.UserDao">
+	<resultMap id="BaseResultMap" type="com.itmuch.cloud.study.entity.User">
+		<result column="id" property="id" />
+		<result column="username" property="username" />
+		<result column="name" property="name" />
+		<result column="age" property="age" />
+		<result column="balance" property="balance" />
+	</resultMap>
+
+	<select id="findById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+		select
+		id, username, name, age, balance
+		from user
+		where id = #{id}
+	</select>
+
+</mapper>
