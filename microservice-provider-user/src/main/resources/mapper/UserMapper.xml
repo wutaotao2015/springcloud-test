@@ -14,6 +14,19 @@
 		id, username, name, age, balance
 		from user
 		where id = #{id}
+
 	</select>
 
+	<insert id="insertTest" parameterType="User" useGeneratedKeys="true" keyProperty="age">
+		insert into user(id, username, name, age) values (#{id}, #{username}, #{name}, #{age})
+	</insert>
+
+
+	<select id="selectUserList" resultMap="BaseResultMap" >
+		select
+		id, username, name, age, balance
+		from user
+		where username = #{name}
+
+	</select>
 </mapper>

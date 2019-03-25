@@ -4,16 +4,16 @@ spring:
   application:
     name: microservice-provider-user
   datasource:                           # 指定数据源
-    url: jdbc:mysql://localhost:3306/springbootdb?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
-    username: root
-    password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
-mybatis:
+    url: jdbc:mysql://localhost:3306/pra?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    username: pra
+    password: pra
+    driver-class-name: com.mysql.jdbc.Driver
+mybatis-plus:
   typeAliasesPackage: com.itmuch.cloud.study.entity    # 实体类
   mapperLocations: classpath:mapper/*.xml             # mapper配置文件
 logging:                                # 配置日志级别，让hibernate打印出执行的SQL
   level:
-    root: INFO
+    root: debug
     org.hibernate: INFO
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
