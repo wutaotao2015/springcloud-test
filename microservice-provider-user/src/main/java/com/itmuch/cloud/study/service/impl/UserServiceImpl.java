@@ -1,8 +1,8 @@
 package com.itmuch.cloud.study.service.impl;
 
 import com.baomidou.mybatisplus.plugins.Page;
-import com.baomidou.mybatisplus.plugins.pagination.Pagination;
 import com.itmuch.cloud.study.dao.UserDao;
+import com.itmuch.cloud.study.dto.Criteria;
 import com.itmuch.cloud.study.entity.User;
 import com.itmuch.cloud.study.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +32,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> selectUserList(Page<User> page, String name) {
-        return userDao.selectUserList(page, name);
+        Criteria criteria = new Criteria();
+        criteria.setUsername(name);
+        return userDao.selectUserList(page, criteria);
     }
 
 }

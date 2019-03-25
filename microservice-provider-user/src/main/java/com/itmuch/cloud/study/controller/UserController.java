@@ -36,7 +36,7 @@ public class UserController {
   public String page(@RequestParam String name) {
     Page<User> userPage = new Page<>();
     userPage.setSize(3);
-    userPage.setCurrent(2);
+    userPage.setCurrent(1);
     List<User> list = this.userService.selectUserList(userPage, name);
     return new Gson().toJson(list);
   }

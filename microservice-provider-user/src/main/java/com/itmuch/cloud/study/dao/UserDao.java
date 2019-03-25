@@ -1,6 +1,7 @@
 package com.itmuch.cloud.study.dao;
 
 import com.baomidou.mybatisplus.plugins.pagination.Pagination;
+import com.itmuch.cloud.study.dto.Criteria;
 import com.itmuch.cloud.study.entity.User;
 import org.apache.ibatis.annotations.Param;
 
@@ -12,5 +13,5 @@ public interface UserDao {
 
     int insertTest(User user);
 
-    List<User> selectUserList(Pagination page, String name);
+    List<User> selectUserList(Pagination page, Criteria criteria);
 }

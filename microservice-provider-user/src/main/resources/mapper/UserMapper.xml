@@ -22,11 +22,11 @@
 	</insert>
 
 
-	<select id="selectUserList" resultMap="BaseResultMap" >
+	<select id="selectUserList" parameterType="com.itmuch.cloud.study.dto.Criteria" resultMap="BaseResultMap" >
 		select
 		id, username, name, age, balance
 		from user
-		where username = #{name}
+		where username = #{username}
 
 	</select>
 </mapper>
